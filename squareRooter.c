@@ -6,7 +6,7 @@ int main() {
 
     while (1) {
         printf("Please enter a positive number (Enter \"-1\" to shut down): ");
-        scanf("%d", &number);
+        scanf("%f", &number);
 
         if (number == -1) {
             printf("Program is shutting down...\n");
@@ -20,9 +20,9 @@ int main() {
 
         squareRoot = sqrt(number);
         if (squareRoot == (int)squareRoot) {
-            printf("Square root of %d is an integer and it is: %.0lf\n", number, squareRoot);
+            printf("Square root of %.1f is an integer and it is: %.1f\n", number, squareRoot);
         } else {
-            printf("Square root of %d is not an integer.\n", number);
+            printf("Square root of %.1f is not an integer.\n", number);
         }
     }
 
