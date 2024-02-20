@@ -2,37 +2,29 @@
 #include <math.h>
 
 int main() {
-    int number, squareRoot;
+    float number, squareRoot;
 
     while (1) {
-
-        do {
-     
-            printf("Please enter a positive number (Enter \"-1\" to shut down):");
-            scanf("%d", &number);
-
-            if (number == -1) {
-                printf("Program is shutting down...\n");
-                break;
-            }
-
-            if (number < 0) {
-                printf("Do not do that.\n");
-            } 
-
-        }while (number < 0);
+        printf("Please enter a positive number (Enter \"-1\" to shut down): ");
+        scanf("%d", &number);
 
         if (number == -1) {
+            printf("Program is shutting down...\n");
             break;
         }
 
-        squareRoot=sqrt(number);
-        if (squareRoot*squareRoot == number) {
-            printf("Square root of %d is an integer and it is: %d\n", number, squareRoot);
+        if (number < 0) {
+            printf("Do not do that.\n");
+            continue; 
+        }
+
+        squareRoot = sqrt(number);
+        if (squareRoot == (int)squareRoot) {
+            printf("Square root of %d is an integer and it is: %.0lf\n", number, squareRoot);
         } else {
             printf("Square root of %d is not an integer.\n", number);
-        }  
-
+        }
     }
+
     return 0;
 }
